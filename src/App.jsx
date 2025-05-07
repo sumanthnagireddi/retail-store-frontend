@@ -1,10 +1,11 @@
 import "./App.css";
-import Admin from "./pages/Admin";
-
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/routes";
 function App() {
+ 
   return (
     <>
-      <Admin/>
+      <RouterProvider router={router} />
     </>
   );
 }
