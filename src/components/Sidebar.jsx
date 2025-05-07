@@ -116,12 +116,12 @@ function Sidebar() {
             </a>
           </li>
           <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              User Roles
-            </a>
+          <Link to={"roles"}>
+              <span className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800">
+               User Roles
+              </span>
+            </Link>
+           
           </li>
           <li>
             <a

@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../pages/Home";
 import User from "../pages/User";
+import Roles from "../pages/Roles";
 
 const Layout = () => {
   return (
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path:"users",
         element: <User />, 
+      },
+      {
+        path:"roles",
+        element: <Roles />, 
       },
     ],
   },
