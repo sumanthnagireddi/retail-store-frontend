@@ -29,12 +29,11 @@ function Sidebar() {
             </a>
           </li>
           <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Orders
-            </a>
+          <Link to={"orders"}>
+              <span className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800">
+                Orders
+              </span>
+            </Link>
           </li>
           <li>
             <Link to={"users"}>

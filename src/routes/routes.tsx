@@ -5,6 +5,7 @@ import ErrorPage from "../components/ErrorPage";
 import Home from "../pages/Home";
 import User from "../pages/User";
 import Roles from "../pages/Roles";
+import Orders from "../pages/Orders";
 
 const Layout = () => {
   return (
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
       {
         path:"roles",
         element: <Roles />, 
+      },
+      {
+        path:"orders",
+        element: <Orders />, 
       },
     ],
   },
