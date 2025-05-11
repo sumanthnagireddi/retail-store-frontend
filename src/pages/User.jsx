@@ -175,6 +175,7 @@ export default function User() {
                   <td className={classes}>
                     <Chip
                       variant="ghost"
+                       className="w-fit"
                       size="sm"
                       value="Active" // You can adjust this logic based on actual status if available
                       color="green"

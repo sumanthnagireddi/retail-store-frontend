@@ -1,147 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Sidebar() {
+  const location = useLocation();
+
+  const navLinks = [
+    { label: "Dashboard", path: "/dashboard" },
+    { label: "Products", path: "/products" },
+    { label: "Orders", path: "/orders" },
+    { label: "Customers", path: "/users" },
+    { label: "Categories & Collections", path: "/categories" },
+    { label: "Inventory", path: "/inventory" },
+    { label: "Coupons & Promotions", path: "/coupons" },
+    { label: "Reviews", path: "/reviews" },
+    { label: "Returns & Refunds", path: "/returns" },
+    { label: "Shipping & Logistics", path: "/shipping" },
+    { label: "Vendors", path: "/vendors" },
+    { label: "CMS", path: "/cms" },
+    { label: "Reports & Analytics", path: "/reports" },
+    { label: "User Roles", path: "/roles" },
+    { label: "Notifications", path: "/notifications" },
+    { label: "Settings", path: "/settings" },
+  ];
+
   return (
     <div className="flex h-screen flex-col justify-between border-r border-gray-200 bg-white">
-      {/* Logo Section */}
       <div className="px-4 py-6">
         <span className="flex h-10 w-full items-center justify-center rounded-lg bg-green-200/60 text-lg font-medium text-green-600">
           Retail Store
         </span>
 
-        {/* Navigation Links */}
         <ul className="mt-6 space-y-1 text-sm font-medium text-gray-600">
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Products
-            </a>
-          </li>
-          <li>
-          <Link to={"orders"}>
-              <span className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800">
-                Orders
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to={"users"}>
-              <span className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800">
-                Customers
-              </span>
-            </Link>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Categories & Collections
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Inventory
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Coupons & Promotions
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Reviews
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Returns & Refunds
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Shipping & Logistics
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Vendors
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              CMS
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Reports & Analytics
-            </a>
-          </li>
-          <li>
-          <Link to={"roles"}>
-              <span className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800">
-               User Roles
-              </span>
-            </Link>
-           
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Notifications
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Settings
-            </a>
-          </li>
+          {navLinks.map((link) => {
+            const isActive = location.pathname.startsWith(link.path);
+            return (
+              <li key={link.label}>
+                <Link
+                  to={link.path}
+                  className={`block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-800 ${
+                    isActive ? "bg-gray-400/50 text-gray-900 font-semibold" : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
 
-      {/* User Profile Section */}
       <div className="sticky inset-x-0 bottom-0 border-t border-gray-200 bg-white">
         <a href="#" className="flex items-center gap-3 p-4 hover:bg-gray-50">
           <img

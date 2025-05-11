@@ -139,6 +139,7 @@ export default function Roles() {
                       size="sm"
                       value="Active"
                       color="green"
+                       className="w-fit"
                     />
                   </td>
                   <td className={classes}>

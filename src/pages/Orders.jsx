@@ -157,7 +157,7 @@ export default function Orders() {
                   </td>
                   <td className={''}>
                     <Chip
-                    className="w-fit"
+                    className="w-fit "
                       variant="ghost"
                       size="sm"
                       value={order.orderStatus}
